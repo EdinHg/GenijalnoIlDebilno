@@ -1,0 +1,133 @@
+\documentclass[12pt,a4paper,oneside]{book}
+\expandafter\def\csname ver@etex.sty\endcsname{3000/12/31}
+\setlength{\tabcolsep}{0.5em}
+\usepackage{tocloft}
+\usepackage{notoccite}
+\usepackage{datetime}
+\usepackage{etex}
+\usepackage[pdftex]{graphicx}
+\usepackage{rotating}
+\usepackage{epsfig}
+\usepackage{epstopdf}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{xurl}
+\usepackage{lastpage}
+\usepackage{adjustbox}
+\usepackage{newtxmath}
+\usepackage{amscd}
+\usepackage{lineno}
+\usepackage{color,soul}
+%\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[acronym,nonumberlist]{glossaries}
+\usepackage{amsfonts}
+\usepackage{setspace}
+\usepackage{multicol}
+\usepackage{hhline}
+\usepackage{enumerate}
+\usepackage{delarray}
+\usepackage{array}  
+\usepackage{tabularx} 
+\usepackage{multirow}
+\usepackage{capt-of}
+\usepackage{algpseudocode}
+\usepackage[chapter]{algorithm}
+\makeatletter
+\renewcommand{\ALG@name}{Algoritam}
+\renewcommand{\algorithmicrequire}{\textbf{Ulazi:}}
+\renewcommand{\algorithmicensure}{\textbf{Izlazi:}}
+\makeatother
+\usepackage[bf, font=small]{caption}
+\usepackage[labelfont=small, font=small]{subcaption}
+\usepackage{wasysym}
+\usepackage{subeqnarray}
+\usepackage{pdflscape}
+\usepackage{enumitem}
+\usepackage{diagbox}
+%\usepackage{cite}
+\usepackage{float}
+\usepackage{etoolbox}
+\usepackage[toc,page]{appendix}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\usepackage{makeidx}
+\usepackage{nomencl}
+\usepackage{lastpage}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily,breaklines=true}
+\usepackage{courier}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{url}
+\usepackage{svg}
+\usepackage{tocloft}    %%%%
+\cftsetrmarg{2em}
+\usepackage{needspace}
+\usepackage{float} 
+
+
+\setlength{\headheight}{15pt}
+
+\titleformat{\chapter}[hang]
+{\normalfont\huge\bfseries}{\ \thechapter.}{0.1em}{}
+\titlespacing*{\chapter}{0pt}{0pt}{30pt}
+
+\fancypagestyle{plain}{%
+    \fancyhf{}%
+    \fancyfoot[CF]{{\thepage}}%
+    \fancyfoot[CF]{{\thepage}}%
+    \renewcommand{\headrulewidth}{0pt}%
+}
+
+\fancypagestyle{fancyplain}{%
+    \fancyhf{}
+    \lhead{\nouppercase{\fancyplain{}{\leftmark}}}
+    \renewcommand{\chaptermark}[1]{\markboth{##1}{}}
+    \renewcommand{\footrulewidth}{0.4pt}
+    \fancyfoot[CF]{{\thepage}}%
+}
+
+\newdateformat{monthdayyeardate}{%
+  \THEDAY.\THEMONTH.\THEYEAR. god.}
+
+%\AtBeginDocument{\addtocontents{toc}{\protect\thispagestyle{empty}}}
+%\AtBeginDocument{\addtocontents{lof}{\protect\thispagestyle{empty}}}
+%\AtBeginDocument{\addtocontents{lot}{\protect\thispagestyle{empty}}}
+
+\usepackage[square, numbers, sort]{natbib} 
+
+\addto\captionsenglish{
+    \renewcommand{\bibname}{Literatura}
+    \renewcommand{\tablename}{Tabela}
+    \renewcommand{\figurename}{Slika}
+    \renewcommand{\nomname}{Popis oznaka}
+    \renewcommand{\indexname}{Indeks pojmova}
+    \renewcommand{\lstlistingname}{Listing koda}
+    \renewcommand{\contentsname}{Sadržaj}
+    \renewcommand{\listtablename}{Popis tabela}
+    \renewcommand{\listfigurename}{Popis slika}
+    \renewcommand{\listalgorithmname}{Popis algoritama}
+    \renewcommand\appendixname{Prilog}
+    \renewcommand\appendixpagename{Prilozi}
+    \renewcommand\appendixtocname{Prilozi}
+}
+\usepackage{pdfpages}
+\usepackage[unicode,breaklinks=true]{hyperref}
+
+\newcommand{\listequationsname}{Popis jednačina}
+\newlistof{myequations}{equ}{\listequationsname}
+\newcommand{\myequations}[1]{%
+\addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}\par}
+\renewcommand\lstlistlistingname{Popis listinga koda}
+
+\setlength{\parskip}{0.5em}
+
+\makeindex
+\makenomenclature
+
+\bibliographystyle{IEEEtran}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning}

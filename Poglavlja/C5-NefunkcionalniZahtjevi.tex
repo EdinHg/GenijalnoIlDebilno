@@ -1,0 +1,112 @@
+\sloppy
+\chapter{NEFUNKCIONALNI ZAHTJEVI}
+
+\sloppy
+\section*{Kontrola verzija}
+
+Zerina Ahmetović - atributi kvalitete
+
+\sloppy
+\section{Atributi kvalitete}
+%po 4 za svaku subs tip-dostupnost npr, opis i vrsta-kvalit.ili kvant, task2
+\sloppy
+\subsection{Operativni atributi}
+
+\begin{enumerate}
+    \item\textbf{Tip:} dostupnost\\
+    \textbf{Opis:} Sistem mora biti dostupan 24/7 jer korisnici mogu kupovati karte i pregledati predstave u bilo koje doba dana.\\
+    \textbf{Vrsta:} kvantitativni
+    \item\textbf{Tip:} dostupnost\\
+    \textbf{Opis:} Ažuriranja sistema trebaju se vršiti noću u periodu 00:00–05:00, uz minimalno vrijeme nedostupnosti, koristeći postupne \textit{deploy} strategije (npr. \textit{blue-green deployment}).\\
+    \textbf{Vrsta:} kvantitativni
+    \item\textbf{Tip:} pristupačnost\\
+    \textbf{Opis:} Sistem mora omogućiti brz pristup informacijama o predstavama, gdje je učitavanje manje od 2 sekunde po stranici).\\
+    \textbf{Vrsta:} kvantitativni
+    \item\textbf{Tip:} sigurnost\\
+    \textbf{Opis:} Podaci o korisnicima i transakcijama moraju biti zaštićeni enkripcijom (npr. TLS za komunikaciju, AES za podatke).\\
+    \textbf{Vrsta:} kvalitatitvni
+    \item\textbf{Tip:} upotrebljivost\\
+    \textbf{Opis:} Sistem treba imati jednostavno i jasno korisničko uputstvo koje se prikazuje pri prvom korištenju ili na zahtjev.\\
+    \textbf{Vrsta:} kvalitatitvni
+    \item\textbf{Tip:} povjerljivost\\
+    \textbf{Opis:} Sistem prikuplja osnovne korisničke podatke (ime, \textit{email}, historija kupovine), koji moraju biti čuvani u skladu s pravilima o privatnosti.\\
+    \textbf{Vrsta:} kvalitatitvni
+    \item\textbf{Tip:} povjerljivost\\
+    \textbf{Opis:} Korisnik mora dati saglasnost prilikom registracije da se njegovi podaci mogu čuvati i koristiti za potrebe sistema.\\
+    \textbf{Vrsta:} kvalitatitvni
+\end{enumerate}
+
+\sloppy
+\subsection{Revizijski atributi}
+
+\begin{enumerate}
+    \item\textbf{Tip:} održivost\\
+    \textbf{Opis:} Osoba koja održava sistem mora poznavati osnovne \textit{DevOps} principe (npr. \textit{CI/CD, Docker, Git}), kako bi bila sposobna za nadogradnje bez prekida rada.\\
+    \textbf{Vrsta:} kvalitativni
+    \item\textbf{Tip:} fleksibilnost\\
+    \textbf{Opis:} Sistem koristi troslojnu arhitekturu (prezentacija, poslovna logika, pristup podacima) i modularni dizajn, što omogućava zamjenu ili nadogradnju pojedinih dijelova bez uticaja na ostatak sistema.\\
+    \textbf{Vrsta:} kvalitativni
+    \item\textbf{Tip:} fleksibilnost\\
+    \textbf{Opis:} Fleksibilnost se dodatno osigurava korištenjem REST API-ja i nezavisnih frontend-backend komponenti.\\
+    \textbf{Vrsta:} kvalitativni
+    \item\textbf{Tip:} skalabilnost\\
+    \textbf{Opis:} Sistem mora podržati skaliranje za do 5x povećanja broja korisnika u periodima visokog opterećenja (kulturne sezone, festivali, promocije), pri čemu mora zadržati vrijeme odziva ispod 2 sekunde za 95\% zahtjeva.\\
+    \textbf{Vrsta:} kvantitativni
+    \item\textbf{Tip:} skalabilnost\\
+    \textbf{Opis:} \textit{Backend} koristi \textit{Node.js} koji omogućava \textit{event-driven }model, idealan za skalabilne aplikacije.\\
+    \textbf{Vrsta:} kvalitativni
+    \item\textbf{Tip:} jednostavnost\\
+    \textbf{Opis:} Sistem je dizajniran da bude kompleksan po mogućnostima, ali jednostavan za korištenje i održavanje – svaka komponenta ima jasnu funkciju i dokumentovani interfejs.\\
+    \textbf{Vrsta:} kvalitativni
+\end{enumerate}
+
+\sloppy
+\subsection{Tranzicijski atributi}
+
+\begin{enumerate}
+    \item\textbf{Tip:} portabilnost\\
+    \textbf{Opis:} Sistem koristi \textit{web} tehnologije koje su platformski nezavisne, te aplikacija radi na svim modernim pregledačima i operativnim sistemima \textit{(Windows, macOS, Linux, Android, iOS}), kao i na mobilnim uređajima i tabletima.\\
+    \textbf{Vrsta:} kvalitativni
+    \item\textbf{Tip:} interoperabilnost\\
+    \textbf{Opis:} Uska grla mogu nastati kod plaćanja (latencija i fallback greške) te kod integracija sa društvenim mrežama ako promijene API-je, stoga je implementirana modularnost i mogućnost zamjene konekcija.\\
+    \textbf{Vrsta:} kvalitativni
+    \item\textbf{Tip:} interoperabilnost\\
+    \textbf{Opis:} Sistem mora ostvariti komunikaciju sa platformama za plaćanje (\textit{PayPal}, \textit{Monri}) putem API-ja i sa društvenim mrežama putem njihovih SDK-ova i REST API-ja za dijeljenje sadržaja i autentikaciju.\\
+    \textbf{Vrsta:} kvalitativni
+    \item\textbf{Tip:} ponovna upotrebljivost\\
+    \textbf{Opis:} Prepravke korisničkog interfejsa ili zamjena domena (npr. iz „pozorište“ u „koncerti“) zahtijevaju minimalne izmjene jer je logika sistema odvojena od sadržaja.\\
+    \textbf{Vrsta:} kvalitativni
+\end{enumerate}
+
+\sloppy
+\section{Ograničenja}
+
+\sloppy
+\subsection{Finansijska ograničenja}
+
+Opisati sva finansijska ograničenja i na koji način utječu na projekat.
+
+\sloppy
+\subsection{Hardverska ograničenja}
+
+Opisati sva hardverska ograničenja i na koji način utječu na projekat.
+
+\sloppy
+\subsection{Tehnološka ograničenja}
+
+Opisati sva tehnološka ograničenja i na koji način utječu na projekat.
+
+\sloppy
+\subsection{Organizacijska ograničenja}
+
+Opisati sva organizacijska ograničenja i na koji način utječu na projekat.
+
+\sloppy
+\subsection{Operativna ograničenja}
+
+Opisati sva operativna ograničenja i na koji način utječu na projekat.
+
+\sloppy
+\subsection{Zakonska ograničenja}
+
+Opisati sva zakonska ograničenja i na koji način utječu na projekat.
