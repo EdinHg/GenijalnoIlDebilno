@@ -1,16 +1,21 @@
-# .github/workflows/latex.yml
 name: Build LaTeX and Deploy to GitHub Pages
 
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-    
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v4
@@ -19,96 +24,47 @@ jobs:
       uses: xu-cheng/latex-action@v3
       with:
         root_file: main.tex
-        latexmk_use_xelatex: false  # Set to true if using XeLaTeX
         
-    - name: Set up output directory
-      run: |
-        mkdir -p output
-        mkdir -p docs
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
         
-    - name: Copy generated PDF
+    - name: Create output directory
+      run: mkdir -p _site
+      
+    - name: Copy PDF and create index
       run: |
-        find . -name "*.pdf" -not -path "./.git/*" -exec cp {} docs/ \;
-        
-    - name: Generate index.html
-      run: |
-        cat > docs/index.html << 'EOF'
+        cp main.pdf _site/
+        cat > _site/index.html << 'EOF'
         <!DOCTYPE html>
-        <html lang="en">
+        <html>
         <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>LaTeX Document</title>
+            <meta charset="UTF-8">
             <style>
-                body { 
-                    font-family: 'Arial', sans-serif; 
-                    max-width: 1200px; 
-                    margin: 0 auto; 
-                    padding: 20px;
-                    line-height: 1.6;
-                }
-                .header { 
-                    background: #f4f4f4; 
-                    padding: 20px; 
-                    border-radius: 8px; 
-                    margin-bottom: 20px;
-                }
-                .pdf-link { 
-                    display: inline-block; 
-                    padding: 12px 24px; 
-                    background: #007cba; 
-                    color: white; 
-                    text-decoration: none; 
-                    border-radius: 6px; 
-                    font-weight: bold;
-                    margin: 10px 5px;
-                }
-                .pdf-link:hover { 
-                    background: #005a86; 
-                }
-                .info { 
-                    background: #e8f4f8; 
-                    padding: 15px; 
-                    border-radius: 6px; 
-                    margin: 20px 0;
-                }
-                .viewer {
-                    border: 1px solid #ddd;
-                    border-radius: 8px;
-                    overflow: hidden;
-                    margin-top: 20px;
-                }
+                body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+                .pdf-link { display: inline-block; padding: 10px 20px; background: #007cba; color: white; text-decoration: none; border-radius: 5px; }
             </style>
         </head>
         <body>
-            <div class="header">
-                <h1>LaTeX Document</h1>
-                <p>Automatically compiled and deployed using GitHub Actions</p>
-            </div>
-            
-            <div class="info">
-                <h3>Available Documents:</h3>
-                <a href="main.pdf" class="pdf-link">📄 View Main Document</a>
-                <br>
-                <small>Last updated: $(date -u +"%Y-%m-%d %H:%M UTC")</small>
-            </div>
-            
-            <h3>Document Preview:</h3>
-            <div class="viewer">
-                <embed src="main.pdf" type="application/pdf" width="100%" height="700px">
-                <p>If the PDF doesn't display, <a href="main.pdf">click here to download</a>.</p>
-            </div>
-            
-            <footer style="margin-top: 40px; text-align: center; color: #666;">
-                <small>Built with ❤️ using GitHub Actions and LaTeX</small>
-            </footer>
+            <h1>LaTeX Document</h1>
+            <p><a href="main.pdf" class="pdf-link">View PDF</a></p>
+            <embed src="main.pdf" type="application/pdf" width="100%" height="600px" />
         </body>
         </html>
         EOF
         
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      if: github.ref == 'refs/heads/main'
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs
+        path: ./_site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
