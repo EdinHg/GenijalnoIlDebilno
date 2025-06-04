@@ -6,22 +6,222 @@
 
 U par rečenica opisati koji članovi tima su učestvovali u kreiranju ovog poglavlja.
 
+\noindent Bašović Arman - ostvareni ciljevi projekta, plan testiranja sistema, plan održavanja sistema
+
+\noindent Tarik Hastor - finalni izvještaj
+
 \sloppy
 \section{Ostvareni ciljevi projekta}
 
-Opisati da li su klijenti zadovoljni prijedlogom projekta informacionog sistema, da li postoje elementi koji nisu mogli biti usklađeni sa zahtjevima i zašto, kao i koji su izazovi ostali za implementaciju, testiranje i održavanje.
+\textbf{Datum:} 22.\,maja 2025.
+
+
+\textbf{Sudionici:}
+\begin{itemize}
+  \item \textbf{Predstavnik razvojnog tima:} Bašović Arman
+  \item \textbf{Klijent:} Aya Ali Al Zayat
+\end{itemize}
+
+\textbf{Cilj razgovora:} Provjeriti prihvatljivost dosad izgrađenog dijela projekta, potvrditi ostvarenja i identificirati preostale izazove.
+
+\bigskip
+
+\renewcommand{\arraystretch}{1.6}
+
+\noindent
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+\textbf{Predstavnik razvnojnog tima (P)} &
+\textbf{Klijent (K)} \\
+\hline
+Uzimajući u obzir da ciljna publika uključuje širok spektar korisnika (od mladih do starijih), smatraju li se dosadašnje funkcionalnosti dovoljno pristupačnim svim korisnicima? &
+Iako sve planirane funkcionalnosti nisu u potpunosti prilagođene svakom tipu korisnika (npr. dijeljenje sadržaja na TikToku), smatram da je predloženi spektar funkcionalnosti dovoljno raznolik i sveobuhvatan da zadovolji potrebe šire ciljne grupe. \\
+\hline
+Koliko vam je važno da u budućnosti sami možete mijenjati stvari kao što su repertoar, cijene karata ili opis događaja – bez pozivanja tehničke podrške? &
+Vrlo mi je važno da imam mogućnost samostalnog uređivanja informacija poput repertoara, cijena ulaznica i opisa događaja. Ovo ne samo da doprinosi većoj fleksibilnosti u radu, već i omogućava značajnu finansijsku uštedu, pod uslovom da su izmjene jednostavne i intuitivne za korištenje nakon osnovne obuke. \\
+\hline
+Postoji li nešto u korisničkom prikazu sistema što vam je bilo zbunjujuće ili biste voljeli da izgleda drugačije? &
+Ne, korisnički interfejs mi je bio jasan i pregledan. Pohvaljujem postojanje opcija za svijetlu i tamnu temu, iako to ne utiče direktno na funkcionalnost sistema. Ipak, takva mogućnost pozitivno doprinosi ugodnijem korisničkom iskustvu i estetici interfejsa.
+\\
+\hline
+\end{tabularx}
+
+\bigskip
+
+\textbf{Ostvareni ciljevi:}
+\begin{itemize}
+  \item Funkcionalnosti su implementirane na način koji omogućava jednostavno korištenje svim kategorijama korisnika, uključujući one sa slabijim digitalnim vještinama.
+  \item Klijent je iskazao interes za mogućnost samostalnog upravljanja sadržajem, što ukazuje da sistem odgovara njegovim organizacionim potrebama.
+  \item Vizuelna prezentacija i korisnički interfejs ocijenjeni su kao jasni, s eventualnim manjim sugestijama za poboljšanje koje će biti razmotrene u finalnoj iteraciji.
+\end{itemize}
 
 \sloppy
 \section{Plan testiranja sistema}
 
-Opisati preporučene tehnike testiranja sistema (uključujući funkcionalno testiranje i testiranje performansi). Predložiti grupe korisnika za alfa i beta testiranje. Opisati neophodnost obuke za korištenje sistema i njeno predloženo trajanje.
+Plan testiranja sistema obuhvata tri ključna aspekta: funkcionalno i performansno testiranje, testiranje prihvatljivosti te obuku krajnjih korisnika. U nastavku su opisane tehnike i detaljno objašnjeno kako će se primijeniti na naš informacioni sistem.
+
+\subsection*{1. Tehnike za funkcionalno testiranje i testiranje performansi}
+
+\paragraph{\emph{Unit} testiranje} provodit će se pomoću automatizovanog okvira (npr. \emph{Jest} za \emph{Node.js} \emph{backend}). Svaka funkcija za rezervaciju karata i plaćanje bit će obuhvaćena testovima koji simuliraju validne i nevalidne ulaze te provjeravaju očekivane izlaske.
+
+\paragraph{Regresijsko testiranje} osigurat će stabilnost sistema nakon svake promjene. Koristit ćemo \emph{CI/CD pipeline (GitHub Actions)} koji pri svakom \emph{commit}-u automatski pokreće paket svih postojećih testova i javljanja grešaka prije slanja koda u produkciju.
+
+\paragraph{\emph{Black-box}} testiranje izvodi se bez uvida u kod, direktno kroz korisnički interfejs. Kreirat ćemo skup scenarija (npr. kupovina karte, postavljanje komentara na forum, registracija korisnika) i pomoću alata poput \emph{Selenium} ili \emph{Cypress} simulirati ponašanje krajnjeg korisnika, provjeravajući ispravnost tijeka i poruka o greškama.
+
+\medskip
+
+\paragraph{\emph{Load testing}} (test opterećenja) simulirat će realan broj korisnika u vršnom periodu (npr. 500 istovremenih spojenih korisnika), koristeći alate poput \emph{k6} ili \emph{JMeter}. Cilj je pratiti CPU i memorijske resurse servera te provjeriti da prosječno vrijeme odziva ostane ispod 2 sekunde pri 95 \% zahtjeva.
+
+\paragraph{\emph{Stress testing}} (test izdržljivosti) povećat će opterećenje do prekoračenja granica (npr. 2 500 paralelnih korisnika) kako bismo otkrili tačke zagušenja i vidjeli kako sistem reagira na neplanirani rast opterećenja. Iz merenja ćemo definisati sigurnosne margine skaliranja.
+
+\paragraph{Mjerenje vremena odziva} vršit će se u svakoj fazi automatskih testova i prilikom \emph{load} testova, bilježeći distribuciju latencija. Podaci se prikazuju u grafovima u \emph{Grafana} dashboardu za kontinuirano praćenje.
+
+\subsection*{2. Testiranje prihvatljivosti sistema}
+
+\paragraph{Alfa testiranje} provodit će interni QA tim (2 inženjera). U kontrolisanom okruženju testirat će sve module — od registracije do foruma — i zabilježiti sve funkcionalne i UI nedostatke. Konačni izvještaj koristi se za podešavanje produkcijske okoline.
+
+\paragraph{Beta testiranje} uključuje 20 odabranih krajnjih korisnika iz ciljne skupine. Platforma će biti puštena u \emph{staging} okruženje tako da korisnici imaju realan uvid, ali bez utjecaja na proizvodne podatke. Povratne informacije prikupljamo putem online ankete (\emph{Google Forms)} te ih integriramo u završne dorade.
+
+\subsection*{3. Obuka korisnika}
+
+Platforma je dizajnirana da bude \emph{intuitivna} i samorazumljiva, pa nije predviđena opširna obuka. Umjesto toga:
+
+\begin{itemize}
+  \item \textbf{Ugrađena pomoć:} Svaka stranica nudi \emph{tooltip}-ove i ikone \emph{contextual help} uz ključne kontrole.
+  \item \textbf{\emph{Video-on-demand}:} Kratki (1–2 min) video‐klipovi ugrađeni direktno u aplikaciju pokazuju tokove poput registracije, kupovine i komentarisanja.
+  \item \textbf{\emph{Self-learning}:} Interaktivni \emph{guided tour} pri prvom ulasku vodi korisnika kroz osnovne akcije.
+  \item \textbf{Podrška "\emph{help desk}":} \emph{Chatbot} i e‐mail podrška za detaljna pitanja ukoliko korisnik ne pronađe rješenje u ugrađenoj pomoći.
+\end{itemize}
 
 \sloppy
 \section{Plan održavanja sistema}
 
-Opisati prijedlog plana za održavanje sistema u prvih godinu dana nakon implementacije. Dati predviđanje koliko osoba će biti neophodno za održavanje i šta su najvjerovatniji razlozi za mogući pad sistema ili ažuriranja zbog grešaka.
+
+U ovom poglavlju definiše se strategija održavanja sistema tokom prve godine nakon implementacije. Uključuje plan aktivnosti, strukturu tima za održavanje, identifikaciju rizičnih komponenti i sve četiri vrste održavanja.
+
+\subsection*{1. Način održavanja u prvoj godini}
+
+Tokom prve godine planirano je sljedeće:
+
+\begin{itemize}
+  \item \textbf{Mjesečno praćenje performansi sistema} i logova kako bi se otkrile nepravilnosti u radu.
+  \item \textbf{Automatski \emph{backup} baze podataka} na dnevnom nivou.
+  \item \textbf{Praćenje grešaka i korisničkih prijava} putem integrisanog \emph{ticketing} sistema.
+  \item \textbf{Redovno ažuriranje biblioteka i sigurnosnih paketa} (\emph{Node.js}, \emph{TLS}, vanjski \emph{API} klijenti).
+\end{itemize}
+
+\subsection*{2. Tim za održavanje sistema}
+
+Održavanje će obavljati prošireni tim:
+
+\begin{itemize}
+  \item \textbf{1 \emph{DevOps} inženjer} – CI/CD, server monitoring i infrastruktura.
+  \item \textbf{1 \emph{backend developer}} – održavanje \emph{Node.js API}-ja i otklanjanje grešaka.
+  \item \textbf{1 \emph{frontend developer}} – održavanje korisničkog interfejsa i UI/UX optimizacija.
+  \item \textbf{2 QA inženjera} – automatsko i manualno testiranje, regresija i sigurnosni testovi.
+  \item \textbf{1 \emph{Database Administrator}} – upravljanje backupom, optimizacija performansi baze i sigurnosni \emph{patch}-evi.
+  \item \textbf{1 osoba za korisničku podršku} – prijem prijava, analitika i povratne informacije.
+\end{itemize}
+
+Ovaj tim osigurava brzu reakciju na greške, kvalitetu kroz kontinuirano testiranje i stabilnost baze podataka.
+
+
+\subsection*{3. Rizični dijelovi sistema}
+
+Identifikovani su sljedeći dijelovi sistema kao potencijalno rizični za padove:
+
+\begin{itemize}
+  \item \textbf{Integracija s vanjskim API servisima} (npr. platni sistemi) – moguće izmjene specifikacija i \emph{rate limit}.
+  \item \textbf{Modul za forum i komentare} – povećano opterećenje može izazvati probleme s performansama.
+  \item \textbf{Notifikacijski sistem} – \emph{real-time} obrada može dovesti do zastoja ako ne bude dobro skalirana.
+\end{itemize}
+
+Za te dijelove sistema planirano je detaljno testiranje, kao i dodatno logovanje i \emph{fallback} mehanizmi.
+
+\subsection*{4. Četiri vrste održavanja}
+
+Planirana je podrška za sve četiri vrste održavanja, s konkretnim aktivnostima prilagođenim našem sistemu:
+
+\begin{itemize}
+  \item \textbf{Korektivno održavanje}  
+    Ispravljaćemo greške prijavljene putem ticketing sistema i logova.  
+    \begin{itemize}
+      \item Brza reakcija (SLA od 24 h) za kritične bugove u modu rezervacija i plaćanja.
+      \item \emph{Patch} verzije će se automatski deploy-ati kroz \emph{CI/CD pipeline} nakon QA verifikacije.
+    \end{itemize}
+
+  \item \textbf{Adaptivno održavanje}  
+    Prilagođavaćemo sistem promjenama u vanjskim servisima i regulatornim zahtjevima.  
+    \begin{itemize}
+      \item Ažuriranje integracije s platnim \emph{gateway}-jem pri svakoj promjeni njihove API specifikacije.
+      \item Usaglašavanje Pravila o zaštiti podataka (GDPR) prema novim nacionalnim propisima.
+    \end{itemize}
+
+  \item \textbf{Preventivno održavanje}  
+    Proaktivno otkrivanje i otklanjanje potencijalnih problema prije nego se manifestuju.  
+    \begin{itemize}
+      \item Redovni \emph{security audit} i \emph{penetration test} svakih 3 mjeseca.
+      \item Automatsko obnavljanje SSL certifikata i nadogradnja ovisnosti na posljednje sigurne verzije.
+      \item Periodično \emph{load testing }na testnoj instanci kako bismo otkrili degradaciju performansi.
+    \end{itemize}
+
+  \item \textbf{Perfektivno održavanje}  
+    Unapređenje postojećih funkcionalnosti na osnovu korisničkih povratnih informacija.  
+    \begin{itemize}
+      \item Optimizacija UI mape sjedišta (dodavanje prečica, bolji \textit{ zoom}) nakon analize korisničkih scenarija.
+      \item Uvođenje novih filtera i preporuka na forumu temeljeno na analitici ponašanja.
+    \end{itemize}
+\end{itemize}
 
 \sloppy
 \section{Finalni izvještaj}
 
-Opisati da li se slijedila dinamika rada na projektu iz preliminarnog izvještaja. Osvrnuti se na potencijalne rizike iz uvodnog poglavlja i da li su se ostvarili.
+\subsubsection{Osvrt na plan izvedbe projekta}
+
+Plan izvedbe projekta, prikazan kroz Gantogram, PERT dijagram i raspored resursa specificiran u \ref{izvedba}, postavio je okvir za realizaciju projekta informacionog sistema za pozorište. Tokom realizacije, zabilježena su sljedeća odstupanja u odnosu na plan:
+\begin{enumerate}
+    \item Vremenska odstupanja
+    \item Raspored resursa
+    \item Ispravke grešaka
+\end{enumerate}
+
+\textbf{Vremenska odstupanja} od predviđenog gantograma su najviše prisutna bila u izradi funkcionalnih zahtjeva. Prilikom izrade funkcionalnih zahtjeva klijent je tražio 10 detaljno opisanih funkcionalnih zahtjeva uključujući i UML dijagrame i UI prototipe, što je vremenski produžilo ovu fazu, ovo nije imalo velik uticaj na izradu projekta obzirom da je pokazano razumjevanje timu, koji je za ovu fazu imao više vremena nego za ostale. Veliko produženje je predstavljao Bolt alat, čiji je limitirani \textit{ free tier} usporio rapidno prototipisanje.
+
+\textbf{Raspored resursa} se odnosi na ljude i platformu za izradu dokumenta. Određene faze poput izrade nefunkcionalnih zahtjeva su zahtjevale manje članova tima nego očekivano, dok faze dizajna i izrade funkcionalnih zahtjeva su zahtjevale više članova nego očekivano.
+\textit{Overleaf} kao platforma nam nije dopustio paralelni rad na projektu, također u kasnim fazama projekta alocirano vrjeme za kompajliranje dokumenta nije bilo dovoljno.
+
+\textbf{Ispravke grešaka} u projektu su uključivale nerazumjevanje klijentove definicije PERT dijagrama i pogrešna izrada UML dijagrama aktivnosti. PERT dijagram tražen za projekat i klasična definicija PERT dijagrama se nije poklapala, pa je neplanirano vrijeme bilo uloženo u ispravljanje te greške.
+
+S druge strane prvobitni UML dijagrami aktivnosti u poglavlju 3 su imali grešku sa spajanjem uvjetnog toka. Greška je duže ostala nego što je trebala usljed zaborava na istu i generalnog opterećenja ostatka te faze.
+
+\subsubsection{Osvrt na analizu rizika}
+
+Poglavlje \ref{anaproc} je definiralo rizike u projektu. Sumarizacija sa kratkim osvrtom na rizike i objašnjenjem je data u tabeli \ref{tab:finiz}.
+
+\begin{table}[p]
+    \centering
+    \begin{tabular}{m{3cm}|m{3cm}|m{3cm}|m{3cm}|m{3cm}}
+        \textbf{ Faza rada} & \textbf{Opis rizika} & \textbf{Vjerovatnoća pojave} &\textbf{ Da li se ostvario? }& \textbf{Objašnjenje }\\
+         \hline
+         Prikupljanje korisničkih zahtjeva & Vremenski rizik zbog mogućeg nerazumijevanja & Srednja & Djelimično & Bilo je manjih nesporazuma sa klijentom u vezi sa prioritetima funkcionalnosti, ali su brzo razjašnjeni bez većih kašnjenja.\\ \hline
+          Poslovni procesi & Operativni rizik zbog nerazumijevanja između tima & Mala & Ne &Nije bilo značajnih problema u komunikaciji unutar tima.\\ 
+          \hline
+          Dizajn korisničkih interfejsa & Finansijski rizik zbog nedostatka alata & Mala & Da &Dizajn UI prototipa je urađen koristeći  \textit{ Bolt} , čiji limitirani \textit{ free tier} je usporio prototipisanje\\ 
+          \hline
+          Dizajn korisničkih interfejsa & Operativni rizik zbog manjka stručnog kadra & Srednja & Ne & Nedostatak iskustva kod dijela tima nije uticao na rad na dizajnu interfejsa, jer je problem riješen korištenjem \textit{ Bolt} alata.\\ 
+          \hline
+          Arhitektura informacionog sistema & Tehnički rizik zbog kompleksnosti & Srednja & Ne &Tim nije imao problema sa projektovanjem IS uprkos njegovoj komplesnosti\\ 
+          \hline
+          Prijedlog tehnologija za implementaciju & Vremenski rizik zbog duže analize & Mala & Ne &Tim je vrlo brzo našao adekvatan tehnološki \textit{ stek}\\ 
+          \hline
+          Ograničenja & Programski rizik usljed pojave novih ograničenja po završetku faze & Mala & Ne & Nije bilo problema u razumjevanju ograničenja projekta\\ 
+    \end{tabular}
+    \caption{Sumarizacija pojave rizika prilikom izrade projekta}
+    \label{tab:finiz}
+\end{table}
+
+\newpage
+
+\subsubsection{Zaključak}
+
+Uprkos određenim odstupanjima od plana i ostvarenjima pojedinih rizika, projekat informacionog sistema za pozorište je uspješno realizovan. Najveći izazovi su se odnosili na tehničku složenost integracije vanjskih servisa i dodatna testiranja, što je dovelo do kašnjenja u isporuci pojedinih modula. Međutim, zahvaljujući fleksibilnom pristupu (kombinacija SCRUM, Kanban i FDD metodologija), problemi su uspješno savladani bez značajnog povećanja troškova. Projekat je završen u skladu sa ciljevima i potrebama klijenta.

@@ -4,10 +4,14 @@
 \sloppy
 \section*{Kontrola verzija}
 
-Zakir Šehić - opis arhitekturalnog paterna (razlozi, prednosti, mane)\\
-Adnan Dervišević - dijagram komponenti i paketa, ERD dijagram\\
-Zerina Ahmetović - prijedlog tehnologija za implementaciju\\
-TODO neka osoba - UML tehnologija za implementaciju
+
+Zakir Šehić - opis arhitekturalnog paterna (razlozi, prednosti, mane)
+
+\noindent Adnan Dervišević - dijagram komponenti i paketa, ERD dijagram
+
+\noindent Zerina Ahmetović - prijedlog tehnologija za implementaciju
+
+\noindent Tarik Hastor - UML tehnologija za implementaciju
 
 \section{Arhitektura informacionog sistema}
 
@@ -17,11 +21,17 @@ U svrhu izgradnje informacionog sistema „Pozorište mladih“ odabrana je sloj
 
 Svaki nivo sistema ima jasno definisanu funkciju:
 \begin{itemize}[label=\textbullet]
-    \item \textbf{Nivo prezentacije} \\
+    \item \textbf{Nivo prezentacije} 
+
+    
     Upravljanje vizualnim elementima i korisničkim interakcijama, kao što su rezervacija ulaznica i pregled programa putem interneta ili mobilnih aplikacija.
-    \item \textbf{Poslovni nivo} \\
+    \item \textbf{Poslovni nivo} 
+
+    
     Sadrži sve funkcionalnosti i pravila sistema – od upravljanja rasporedom predstava i rezervacijama, do obračuna prihoda.
-    \item \textbf{Nivo pristupa podacima} \\
+    \item \textbf{Nivo pristupa podacima} 
+
+    
     Brine o pohrani, preuzimanju i integritetu informacija.
 \end{itemize}
 Ova jasna podjela omogućava da promjene u jednom dijelu sistema, kao što je izmjena dizajna web stranice, ne utiču na ostatak funkcionalnosti.
@@ -107,33 +117,42 @@ Na slici \ref{fig:arh2} je prikazan ERD dijagram koji modelira bazu podataka pre
 
 Troslojna arhitektura predstavlja idealno rješenje za \textquotedblleft Pozorište Mladih\textquotedblright{} jer spaja performanse i skalabilnost, što je ključno za kulturne institucije usmjerene ka inovacijama i rastu. Ovaj model ne samo da zadovoljava trenutne zahtjeve, nego omogućava i laku tranziciju prema novim tehnologijama i poslovnim modelima, čime se sistem priprema za buduće izazove.
 
-\section{Prijedlog tehnologija za implementaciju}
+\section{Prijedlog tehnologija za implementaciju} \label{prijedlogTehnologijaZaImplementaciju}
 
-% Opisati sve tehnologije koje se predlažu za implementaciju informacionog sistema (frontend, backend, baza podataka, eventualno dodatni elementi poput druge vrste aplikacije, eksternih API servisa i sl.). Prikazati UML dijagram raspoređivanja sistema.
 
 \textbf{Prijedlog programskih jezika za komponente sistema:}
 \begin{itemize}  
-    \item \textbf{\textit{Frontend}}: \textit{JavaScript},te \textit{markup} jezici HTML, CSS\\ 
+    \item \textbf{\textit{Frontend}}: \textit{JavaScript},te \textit{markup} jezici HTML, CSS
+
+    
     Upotrebom \textit{JavaScript}-a se osigurava dinamičnost \textit{web} aplikacije, dok su HTML i CSS ključni pri strukturiranju i stilizaciji korisničkog interfejsa.
-    \item \textbf{\textit{Backend} (serverska logika)}:  \textit{JavaScript}, uz\textit{ Node.js} okruženje\\
-    Node.js okruženje omogućava pisanje skalabilnih backend servisa koristeći isti programski jezik kao na frontend strani. Ovakav pristup uveliko olakšava razvoj sistema, kao i njegovo održavanje. 
+    \item \textbf{\textit{Backend} (serverska logika)}:  \textit{JavaScript}, uz\textit{ Node.js} okruženje
+
+    
+    \textit{Node.js} okruženje omogućava pisanje skalabilnih \textit{backend} servisa koristeći isti programski jezik kao na \textit{frontend} strani. Ovakav pristup uveliko olakšava razvoj sistema, kao i njegovo održavanje. 
     \item \textbf{Baza podataka}: \begin{itemize}
         \item \textbf{Jezik za upite:} SQL
-        \item \textbf{Jezik za komunikaciju sa bazom:} \textit{JavaScript} (kroz \textit{Sequelize Object-Relational Mapping - ORM})
+        \item \textbf{Jezik za komunikaciju sa bazom:} \textit{JavaScript} (kroz \textit{Sequelize Object-Relational Mapping} - ORM)
     \end{itemize}
     Lahka integracija s \textit{Node.js backendom} i održava se dosljednost koda, budući da je isti programski jezik u upotrebi (\textit{JavaScript}). Ubrzava razvoj, koristan za brzu izradu protipa i lakšu migraciju baze.
 \end{itemize} 
 \textbf{Prijedlog \textit{framework}-a koji će se koristiti:}
 \begin{itemize}  
-    \item \textbf{Frontend}: \textit{React.js}\\
-    \textit{React} nudi komponenti pristup razvoju korisničkog interfejsa, što olakšava održavanje i ponovno korištenje koda. Veće je brzine od njemu sličnih \textit{framework}-a, te iam širu zajednicu.
-    \item \textbf{\textit{Backend} (serverska logika)}: \textit{Express.js} (unutar \textit{Node.js})\\
+    \item \textbf{Frontend}: \textit{React.js}
+
+    
+    \textit{React} nudi komponenti pristup razvoju korisničkog interfejsa, što olakšava održavanje i ponovno korištenje koda. Veće je brzine od njemu sličnih \textit{framework}-a, te ima širu zajednicu.
+    \item \textbf{\textit{Backend} (serverska logika)}: \textit{Express.js} (unutar \textit{Node.js})
+
+    
     \textit{Express} je minimalan i fleksibilan \textit{framework} koji omogućava brzo kreiranje REST API-ja i integraciju s različitim bazama podataka. Ima veliku zajednicu i mnoštvo dostupnih \textit{middleware} paketa.
 \end{itemize} 
 \textbf{Tip baze podataka:}
 \begin{itemize}  
-    \item \textbf{Relaciona baza podataka}: \textit{PostgreSQL}\\
-    PostgreSQL je open-source, robustan i skalabilan sistem za upravljanje bazama podataka koji podržava kompleksne upite i transakcije. 
+    \item \textbf{Relaciona baza podataka}: \textit{PostgreSQL}
+
+    
+    \textit{PostgreSQL} je \textit{open-source}, robustan i skalabilan sistem za upravljanje bazama podataka koji podržava kompleksne upite i transakcije. 
     
 \end{itemize} 
 \textbf{Eksterni web API servisi i protokoli:}
@@ -141,16 +160,16 @@ Troslojna arhitektura predstavlja idealno rješenje za \textquotedblleft Pozori�
     \item \textbf{\textit{Payment Gateway} API}: \textit{Monri}, \textit{PayPal}\begin{itemize}
         \item \textbf{Namjena:} \textit{Online} plaćanje i fakturisanje.
         \item \textbf{Razlog:} Pouzdani, sigurni i široko korišteni servisi za obradu transakcija. \textit{Monri} je lokalno popularan, dok je \textit{PayPal} globalno.
-    \end{itemize}%todo mislim da ovog nema u funkcionalnostima
+    \end{itemize}
     \item \textbf{\textit{Google Maps} API} \begin{itemize}
         \item \textbf{Namjena:} Prikaz lokacije pozorišta.
         \item \textbf{Razlog:} Poboljšava korisničko iskustvo i olakšava dolazak posjetilaca.
     \end{itemize}
-    \item \textbf{\textit{Social Media} API:} \textit{Facebook, Instagram} \begin{itemize}
+    \item \textbf{\textit{Social Media} API:} \textit{TikTok, Instagram} \begin{itemize}
         \item \textbf{Namjena:} Integracija sa društvenim mrežama u svrhu promocije predstava.
         \item \textbf{Razlog:} Omogućava automatsko objavljivanje sadržaja i promociju događaja.
     \end{itemize}
-    \item \textbf{\textit{Firebase Cloud Messaging (FCM)}}\begin{itemize}
+    \item \textbf{\textit{Firebase Cloud Messaging} (FCM)}\begin{itemize}
         \item \textbf{Namjena:} Slanje \textit{push} notifikacija korisnicima o predstojećim predstavama ili popustima.
         \item \textbf{Razlog:} Besplatan i lako integrisan servis za notifikacije.
     \end{itemize}
@@ -165,11 +184,17 @@ Troslojna arhitektura predstavlja idealno rješenje za \textquotedblleft Pozori�
 \end{itemize} 
 \textbf{Način pristupa sistemu (klijentska aplikacija):}
 \begin{itemize}  
-    \item \textbf{Web aplikacija}: \textit{index.}html učitan putem \textit{React} rutera (npr. /\textit{home}, /\textit{dashboard}, /\textit{login})\\
-    Pristup kroz web browser na desktopu i mobilnim uređajima.
-    \textit{PostgreSQL} je \textit{open-source}, robustan i skalabilan sistem za upravljanje bazama podataka koji podržava kompleksne upite i transakcije. 
-    \item \textbf{Backend (serverska logika)}: \textit{Express.js} (unutar N\textit{ode.js})\\
-    Express je minimalan i fleksibilan \textit{framework} koji omogućava brzo kreiranje REST API-ja i integraciju s različitim bazama podataka. Ima veliku zajednicu i mnoštvo dostupnih middleware paketa.
+    \item \textbf{Web aplikacija}: \textit{index.}html učitan putem \textit{React} rutera (npr. /\textit{home}, /\textit{dashboard}, /\textit{login}) 
+    Pristup kroz \textit{web browser} na desktopu i mobilnim uređajima.
 \end{itemize} 
 Navedeni prijedlog tehnologija prati osnovne principe troslojne arhitekture: \textbf{prezentacijski sloj (\textit{frontend})} realizovan je pomoću \textit{React} biblioteke i JavaScript jezika, poslovna logika (\textit{backend}) razvija se u \textit{Node.js }okruženju koristeći \textit{Express} \textit{framework}, dok se pristup podacima vrši preko \textit{Sequelize} ORM-a i \textit{PostgreSQL} baze podataka. Ovakav pristup omogućava jasno razdvajanje odgovornosti, bolju modularnost sistema, olakšano testiranje, kao i veću skalabilnost i održivost u budućnosti. Odabrane tehnologije međusobno su kompatibilne i odražavaju savremene industrijske standarde za razvoj \textit{web} aplikacija.
+
+Na slici \ref{fig:arh3} je grafički prikaz ostvaren UML dijagramom raspoređivanja koji opisuje sve podsisteme i njihove najznačanije dijelove.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Slike/Arhitektura/mrzimvpd.png}
+    \caption{UML dijagram raspoređivanja}
+    \label{fig:arh3}
+\end{figure}
 

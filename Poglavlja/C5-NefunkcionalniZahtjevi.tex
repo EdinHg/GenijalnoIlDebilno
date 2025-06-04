@@ -6,33 +6,64 @@
 
 Zerina Ahmetović - atributi kvalitete
 
+\noindent Tarik Hastor - finansijska ograničenja
+
+\noindent Adnan Dervišević - hardverska, tehnološka, organizacijska, operativna i zakonska ograničenja
+
 \sloppy
 \section{Atributi kvalitete}
-%po 4 za svaku subs tip-dostupnost npr, opis i vrsta-kvalit.ili kvant, task2
 \sloppy
 \subsection{Operativni atributi}
 
 \begin{enumerate}
-    \item\textbf{Tip:} dostupnost\\
-    \textbf{Opis:} Sistem mora biti dostupan 24/7 jer korisnici mogu kupovati karte i pregledati predstave u bilo koje doba dana.\\
+    \item\textbf{Tip:} dostupnost
+
+    
+    \textbf{Opis:} Sistem mora biti dostupan 24/7 jer korisnici mogu kupovati karte i pregledati predstave u bilo koje doba dana.
+
+    
     \textbf{Vrsta:} kvantitativni
-    \item\textbf{Tip:} dostupnost\\
-    \textbf{Opis:} Ažuriranja sistema trebaju se vršiti noću u periodu 00:00–05:00, uz minimalno vrijeme nedostupnosti, koristeći postupne \textit{deploy} strategije (npr. \textit{blue-green deployment}).\\
+    \item\textbf{Tip:} dostupnost
+
+    
+    \textbf{Opis:} Ažuriranja sistema trebaju se vršiti noću u periodu 00:00–05:00, uz minimalno vrijeme nedostupnosti, koristeći postupne \textit{deploy} strategije (npr. \textit{blue-green deployment}).
+
+    
     \textbf{Vrsta:} kvantitativni
-    \item\textbf{Tip:} pristupačnost\\
-    \textbf{Opis:} Sistem mora omogućiti brz pristup informacijama o predstavama, gdje je učitavanje manje od 2 sekunde po stranici).\\
+    \item\textbf{Tip:} pristupačnost
+
+    
+    \textbf{Opis:} Sistem mora omogućiti brz pristup informacijama o predstavama, gdje je učitavanje manje od 2 sekunde po stranici).
+
+    
     \textbf{Vrsta:} kvantitativni
-    \item\textbf{Tip:} sigurnost\\
-    \textbf{Opis:} Podaci o korisnicima i transakcijama moraju biti zaštićeni enkripcijom (npr. TLS za komunikaciju, AES za podatke).\\
+    \item\textbf{Tip:} sigurnost
+
+    
+    \textbf{Opis:} Podaci o korisnicima i transakcijama moraju biti zaštićeni enkripcijom (npr. TLS za komunikaciju, AES za podatke).
+
+    
     \textbf{Vrsta:} kvalitatitvni
-    \item\textbf{Tip:} upotrebljivost\\
-    \textbf{Opis:} Sistem treba imati jednostavno i jasno korisničko uputstvo koje se prikazuje pri prvom korištenju ili na zahtjev.\\
+    \item\textbf{Tip:} upotrebljivost
+
+    
+    \textbf{Opis:} Sistem treba imati jednostavno i jasno korisničko uputstvo koje se prikazuje pri prvom korištenju ili na zahtjev.
+
+    
     \textbf{Vrsta:} kvalitatitvni
-    \item\textbf{Tip:} povjerljivost\\
-    \textbf{Opis:} Sistem prikuplja osnovne korisničke podatke (ime, \textit{email}, historija kupovine), koji moraju biti čuvani u skladu s pravilima o privatnosti.\\
+    \item\textbf{Tip:} povjerljivost
+
+    
+    \textbf{Opis:} Sistem prikuplja osnovne korisničke podatke (ime, \textit{email}, historija kupovine), koji moraju biti čuvani u skladu s pravilima o privatnosti.
+
+    
     \textbf{Vrsta:} kvalitatitvni
-    \item\textbf{Tip:} povjerljivost\\
-    \textbf{Opis:} Korisnik mora dati saglasnost prilikom registracije da se njegovi podaci mogu čuvati i koristiti za potrebe sistema.\\
+    \item\textbf{Tip:} povjerljivost
+
+    
+    \textbf{Opis:} Korisnik mora dati saglasnost prilikom registracije da se njegovi podaci mogu čuvati i koristiti za potrebe sistema.
+
+    
     \textbf{Vrsta:} kvalitatitvni
 \end{enumerate}
 
@@ -40,23 +71,47 @@ Zerina Ahmetović - atributi kvalitete
 \subsection{Revizijski atributi}
 
 \begin{enumerate}
-    \item\textbf{Tip:} održivost\\
-    \textbf{Opis:} Osoba koja održava sistem mora poznavati osnovne \textit{DevOps} principe (npr. \textit{CI/CD, Docker, Git}), kako bi bila sposobna za nadogradnje bez prekida rada.\\
+    \item\textbf{Tip:} održivost
+
+    
+    \textbf{Opis:} Osoba koja održava sistem mora poznavati osnovne \textit{DevOps} principe (npr. CI/CD, \textit{Docker, Git}), kako bi bila sposobna za nadogradnje bez prekida rada.
+
+    
     \textbf{Vrsta:} kvalitativni
-    \item\textbf{Tip:} fleksibilnost\\
-    \textbf{Opis:} Sistem koristi troslojnu arhitekturu (prezentacija, poslovna logika, pristup podacima) i modularni dizajn, što omogućava zamjenu ili nadogradnju pojedinih dijelova bez uticaja na ostatak sistema.\\
+    \item\textbf{Tip:} fleksibilnost
+
+    
+    \textbf{Opis:} Sistem koristi troslojnu arhitekturu (prezentacija, poslovna logika, pristup podacima) i modularni dizajn, što omogućava zamjenu ili nadogradnju pojedinih dijelova bez uticaja na ostatak sistema.
+
+    
     \textbf{Vrsta:} kvalitativni
-    \item\textbf{Tip:} fleksibilnost\\
-    \textbf{Opis:} Fleksibilnost se dodatno osigurava korištenjem REST API-ja i nezavisnih frontend-backend komponenti.\\
+    \item\textbf{Tip:} fleksibilnost
+
+    
+    \textbf{Opis:} Fleksibilnost se dodatno osigurava korištenjem REST API-ja i nezavisnih frontend-backend komponenti.
+
+    
     \textbf{Vrsta:} kvalitativni
-    \item\textbf{Tip:} skalabilnost\\
-    \textbf{Opis:} Sistem mora podržati skaliranje za do 5x povećanja broja korisnika u periodima visokog opterećenja (kulturne sezone, festivali, promocije), pri čemu mora zadržati vrijeme odziva ispod 2 sekunde za 95\% zahtjeva.\\
+    \item\textbf{Tip:} skalabilnost
+
+    
+    \textbf{Opis:} Sistem mora podržati skaliranje za do 5x povećanja broja korisnika u periodima visokog opterećenja (kulturne sezone, festivali, promocije), pri čemu mora zadržati vrijeme odziva ispod 2 sekunde za 95\% zahtjeva.
+
+    
     \textbf{Vrsta:} kvantitativni
-    \item\textbf{Tip:} skalabilnost\\
-    \textbf{Opis:} \textit{Backend} koristi \textit{Node.js} koji omogućava \textit{event-driven }model, idealan za skalabilne aplikacije.\\
+    \item\textbf{Tip:} skalabilnost
+
+    
+    \textbf{Opis:} \textit{Backend} koristi \textit{Node.js} koji omogućava \textit{event-driven }model, idealan za skalabilne aplikacije.
+
+    
     \textbf{Vrsta:} kvalitativni
-    \item\textbf{Tip:} jednostavnost\\
-    \textbf{Opis:} Sistem je dizajniran da bude kompleksan po mogućnostima, ali jednostavan za korištenje i održavanje – svaka komponenta ima jasnu funkciju i dokumentovani interfejs.\\
+    \item\textbf{Tip:} jednostavnost
+
+    
+    \textbf{Opis:} Sistem je dizajniran da bude kompleksan po mogućnostima, ali jednostavan za korištenje i održavanje – svaka komponenta ima jasnu funkciju i dokumentovani interfejs.
+
+    
     \textbf{Vrsta:} kvalitativni
 \end{enumerate}
 
@@ -64,17 +119,33 @@ Zerina Ahmetović - atributi kvalitete
 \subsection{Tranzicijski atributi}
 
 \begin{enumerate}
-    \item\textbf{Tip:} portabilnost\\
-    \textbf{Opis:} Sistem koristi \textit{web} tehnologije koje su platformski nezavisne, te aplikacija radi na svim modernim pregledačima i operativnim sistemima \textit{(Windows, macOS, Linux, Android, iOS}), kao i na mobilnim uređajima i tabletima.\\
+    \item\textbf{Tip:} portabilnost
+
+    
+    \textbf{Opis:} Sistem koristi \textit{web} tehnologije koje su platformski nezavisne, te aplikacija radi na svim modernim pregledačima i operativnim sistemima \textit{(Windows, macOS, Linux, Android, iOS}), kao i na mobilnim uređajima i tabletima.
+
+    
     \textbf{Vrsta:} kvalitativni
-    \item\textbf{Tip:} interoperabilnost\\
-    \textbf{Opis:} Uska grla mogu nastati kod plaćanja (latencija i fallback greške) te kod integracija sa društvenim mrežama ako promijene API-je, stoga je implementirana modularnost i mogućnost zamjene konekcija.\\
+    \item\textbf{Tip:} interoperabilnost
+
+    
+    \textbf{Opis:} Uska grla mogu nastati kod plaćanja (latencija i fallback greške) te kod integracija sa društvenim mrežama ako promijene API-je, stoga je implementirana modularnost i mogućnost zamjene konekcija.
+
+    
     \textbf{Vrsta:} kvalitativni
-    \item\textbf{Tip:} interoperabilnost\\
-    \textbf{Opis:} Sistem mora ostvariti komunikaciju sa platformama za plaćanje (\textit{PayPal}, \textit{Monri}) putem API-ja i sa društvenim mrežama putem njihovih SDK-ova i REST API-ja za dijeljenje sadržaja i autentikaciju.\\
+    \item\textbf{Tip:} interoperabilnost
+
+    
+    \textbf{Opis:} Sistem mora ostvariti komunikaciju sa platformama za plaćanje (\textit{PayPal}, \textit{Monri}) putem API-ja i sa društvenim mrežama putem njihovih SDK-ova i REST API-ja za dijeljenje sadržaja i autentikaciju.
+
+    
     \textbf{Vrsta:} kvalitativni
-    \item\textbf{Tip:} ponovna upotrebljivost\\
-    \textbf{Opis:} Prepravke korisničkog interfejsa ili zamjena domena (npr. iz „pozorište“ u „koncerti“) zahtijevaju minimalne izmjene jer je logika sistema odvojena od sadržaja.\\
+    \item\textbf{Tip:} ponovna upotrebljivost
+
+    
+    \textbf{Opis:} Prepravke korisničkog interfejsa ili zamjena domena (npr. iz „pozorište“ u „koncerti“) zahtijevaju minimalne izmjene jer je logika sistema odvojena od sadržaja.
+
+    
     \textbf{Vrsta:} kvalitativni
 \end{enumerate}
 
@@ -84,29 +155,300 @@ Zerina Ahmetović - atributi kvalitete
 \sloppy
 \subsection{Finansijska ograničenja}
 
-Opisati sva finansijska ograničenja i na koji način utječu na projekat.
+Prema izvršenoj \textit{ cost-benefit} analizi data u tabeli \ref{tab:finogr}, projekat je podijeljen na tri glavna aspekta:
+
+\begin{table}[!htb]
+    \centering
+    \begin{tabular}{m{2cm}|m{4cm}|m{4cm}|m{4cm}}
+         & \textbf{Aspekt \#1: Osnovna funkcionalnost online prodaje i rezervacije karata} & \textbf{Aspekt \#2: Korisnički profili i lojalnost programi} & \textbf{Aspekt \#3: Analitika, marketing i promocije}\\
+         \hline
+         \textit{Kratki opis}& Razvoj core sistema za pregled repertoara, odabir sjedišta, online rezervaciju i kupovinu karata, osnovno upravljanje korisnicima. & Implementacija foruma za diskusiju o predstavama, korisničkih profila sa historijom kupovine, personalizovanih notifikacija i sistema lojalnosti. & Integracija sa društvenim mrežama za promociju, alati za slanje promotivnih e-mailova/SMS-ova, sistem za prikupljanje analitičkih podataka o prodaji i korisničkom ponašanju.\\ \hline
+         \textit{Troškovi} & 80 000 KM & 15 000 KM & 60 000 KM\\ \hline
+         \textit{Dobit} & 95 000 KM & 20 000 KM & 200 000 KM\\ \hline
+         \textit{Omjer dobiti i troškova} & 1.18 & 1.33 & 3.33\\
+    \end{tabular}
+    \caption{ \textit{Cost-benefit analiza}}
+    \label{tab:finogr}
+\end{table}
+
+Analiza pokazuje da svaki aspekt donosi pozitivnu ekonomsku vrijednost, pri čemu je Aspekt 3 (Analitika, marketing i promocije) najisplativiji, sa omjerom dobiti i troškova od 3.33. Ovo znači da bi ulaganje u alate za analitiku, marketing i promociju trebalo biti prioritetno, jer može višestruko povećati prihode pozorišta.
+
+Iako Aspekt 1 (Osnovna funkcionalnost) ima najveće troškove (80.000 KM), njegova realizacija je neophodna, jer omogućava osnovno poslovanje sistema (prodaju i rezervaciju karata). Bez ovog aspekta, ostali moduli ne bi imali smisla.
+
+Aspekt 2 (Korisnički profili i lojalnost programi), iako sa manjim potencijalom povrata, doprinosi dugoročnom zadržavanju korisnika i povećanju lojalnosti, što dodatno povećava prihode.
+
+\subsubsection{Zaključak}
+
+Ekonomska izvodljivost projekta je pozitivna, jer svi aspekti pokazuju omjer dobiti i troškova veći od 1, što znači da bi se uložena sredstva vratila kroz ostvarenu dobit. Projekat se može realizovati u fazama, s prioritetom na funkcionalnosti koje generišu najveću vrijednost za korisnike i najbrži povrat investicije. Ograničenja u budžetu mogu uticati na obim i dinamiku implementacije, ali ne ugrožavaju osnovnu isplativost projekta.
 
 \sloppy
 \subsection{Hardverska ograničenja}
 
-Opisati sva hardverska ograničenja i na koji način utječu na projekat.
+
+Hardverska ograničenja definišu minimalne tehničke preduslove koje klijentski uređaji i serverska infrastruktura moraju zadovoljiti kako bi informacioni sistem "Pozorište mladih" funkcionisao optimalno i bio dostupan ciljnoj publici. Ova ograničenja direktno utiču na dizajn, razvoj, testiranje i potencijalni doseg projekta.
+
+Minimalne specifikacije uređaja koje su potrebne da bi se koristio informacioni sistem su:
+
+\begin{itemize}
+    \item \textbf{PC (Desktop/Laptop):}
+        \begin{itemize}
+            \item \textbf{CPU:} \textit{Dual-core} procesor, 1.6 GHz
+            \item \textbf{RAM:} 4 GB
+            \item \textbf{OS:} Operativni sistem koji podržava instalaciju i ažuriranje modernih \textit{web browsera}
+            \item \textbf{Mrežna kartica:} Standardna Ethernet ili Wi-Fi
+            \item \textbf{Pristup internetu:} \textit{Download} brzina 5 Mbps, \textit{Upload} brzina 2 Mbps
+            \item \textbf{\textit{Browser}:} Najnovija stabilna verzija \textit{Google Chrome}, \textit{Mozilla Firefox}, \textit{Safari} ili \textit{Microsoft Edge}
+        \end{itemize}
+    \item \textbf{Mobitel/Tablet:}
+        \begin{itemize}
+            \item \textbf{CPU:} ARM-bazirani procesor srednje klase unazad 3-4 godine
+            \item \textbf{RAM:} 3 GB
+            \item \textbf{OS:} \textit{Android} 8.0 (\textit{Oreo}) ili noviji, \textit{iOS} 13 ili noviji
+            \item \textbf{Internet konekcija:} \textit{Download} brzina 5 Mbps, \textit{Upload} brzina 2 Mbps
+            \item \textbf{\textit{Browser}:} Najnovija stabilna verzija mobilnog \textit{Google Chrome}, \textit{Safari}, \textit{Firefox}
+        \end{itemize}
+\end{itemize}
+
+Minimalne specifikacije potrebne za \textit{hosting} informacionog sistema su:
+\begin{itemize}
+    \item \textbf{\textit{Web }server:}
+        \begin{itemize}
+            \item \textbf{CPU:} 1 vCPU
+            \item \textbf{RAM:} 1 GB
+            \item \textbf{Disk:} 10 GB
+            \item \textbf{OS:} Linux distribucija
+            \item \textbf{Internet konekcija:} \textit{Download} brzina 100 Mbps, \textit{Upload} brzina 100 Mbps
+        \end{itemize}
+    \item \textbf{\textit{Backend }server:}
+        \begin{itemize}
+            \item \textbf{CPU:} 2 vCPU
+            \item \textbf{RAM:} 2 GB
+            \item \textbf{Disk:} 10 GB
+            \item \textbf{OS:} Linux distribucija ili kontejnersko okruženje
+            \item \textbf{Internet konekcija:} \textit{Download} brzina 100 Mbps, \textit{Upload} brzina 100 Mbps
+        \end{itemize}
+    \item \textbf{Server baze podataka:}
+        \begin{itemize}
+            \item \textbf{CPU:} 2 vCPU
+            \item \textbf{RAM:} 4 GB
+            \item \textbf{Disk:} 30 GB
+            \item \textbf{OS:} Linux distribucija ili kontejnersko okruženje
+            \item \textbf{Internet konekcija:} \textit{Download} brzina 100 Mbps, \textit{Upload} brzina 100 Mbps
+        \end{itemize}
+\end{itemize}
+
+\textbf{Uticaj hardverskih ograničenja na projekat:}
+
+\begin{itemize}
+    \item \textbf{Dizajn i Razvoj Korisničkog Interfejsa (\textit{Frontend}):}
+    
+        \begin{itemize}
+            \item \textbf{Doseg publike:} Minimalne specifikacije, uključujući 4GB RAM-a za PC i zahtjev za modernim \textit{browserima}, osiguravaju da će sistem biti dostupan većini korisnika sa relativno novijim uređajima, ali može isključiti korisnike sa veoma starim hardverom.
+            
+            \item \textbf{Performanse:} Potreba za optimizacijom \textit{frontend} kôda (\textit{JavaScript}, CSS, optimizacija slika i drugog multimedijalnog sadržaja) ostaje ključna kako bi se osiguralo brzo učitavanje i fluidan rad čak i na uređajima koji zadovoljavaju minimalne specifikacije, posebno uzimajući u obzir definisanu minimalnu brzinu interneta od 5 Mbps. Veličina resursa koje aplikacija preuzima mora biti kontrolisana.
+
+            \item \textbf{Responzivni dizajn:} Ostaje imperativ za konzistentno iskustvo na različitim uređajima.
+        \end{itemize}
+        
+    \item \textbf{Razvoj \textit{Backend} Sistema:}
+    
+        \begin{itemize}
+            \item \textbf{Optimizacija i efikasnost:} Efikasan \textit{backend} je i dalje neophodan da bi se adekvatno odgovorilo na zahtjeve korisnika, čak i onih sa sporijom internet konekcijom, minimizirajući količinu podataka koja se prenosi.
+        \end{itemize}
+        
+    \item \textbf{Hosting i Infrastruktura:}
+
+        \begin{itemize}
+            \item \textbf{Troškovi i dostupnost resursa:} Definisane minimalne specifikacije servera utiču na izbor \textit{hosting} rješenja, balansirajući između performansi i troškova (u realnom projektu) ili dostupnosti (u akademskom).
+            
+            \item \textbf{Skalabilnost:} Arhitektura mora omogućiti skaliranje serverskih resursa ukoliko minimalne specifikacije postanu nedovoljne uslijed povećanog broja korisnika ili kompleksnosti sistema. Minimalna brzina internet konekcije servera mora biti sposobna da podrži očekivani broj istovremenih korisnika.
+        \end{itemize}
+    
+    \item \textbf{Testiranje:}
+
+        \begin{itemize}
+            \item Testiranje performansi mora uključivati scenarije sa korisnicima na minimalnim hardverskim specifikacijama i sa definisanom minimalnom brzinom internet konekcije (npr. 5 Mbps) kako bi se osiguralo prihvatljivo korisničko iskustvo.
+        
+            \item Testiranje kompatibilnosti ostaje važno.
+        \end{itemize}
+        
+    \item \textbf{Održavanje:}
+
+    \begin{itemize}
+        \item Rutinsko održavanje i ažuriranja sistema trebaju biti planirani tako da ne preopterećuju minimalne serverske konfiguracije.
+    \end{itemize}
+    
+\end{itemize}
 
 \sloppy
 \subsection{Tehnološka ograničenja}
 
-Opisati sva tehnološka ograničenja i na koji način utječu na projekat.
+
+Tehnološka ograničenja su direktna posljedica izbora specifičnih tehnologija, \textit{frameworka}, alata i arhitekturalnih pristupa koji su definisani za razvoj informacionog sistema "Pozorište mladih", kako je detaljno opisano u Poglavlju \ref{prijedlogTehnologijaZaImplementaciju} (Prijedlog tehnologija za implementaciju). Ova ograničenja oblikuju proces razvoja, zahtijevaju određene vještine od tima, utiču na performanse, skalabilnost, održavanje sistema, te nameću specifične načine integracije komponenti i eksternih servisa.
+
+
+\textbf{Uticaj tehnoloških ograničenja na projekat:}
+
+\begin{itemize}
+    
+    \item \textbf{\textit{Frontend} (\textit{JavaScript}, HTML, CSS, \textit{React.js}):}
+
+        \begin{itemize}
+            \item \textbf{Potrebne vještine tima:} Zahtijeva od članova tima poznavanje modernog \textit{JavaScripta} (ES6+), \textit{React} koncepta (komponente, stanje, \textit{props}, \textit{hooks}), HTML5 semantike i naprednog CSS-a (uključujući preprocesore ili \textit{CSS-in-JS} rješenja ako se koriste). U akademskom kontekstu, ovo može značiti potrebu za dodatnim učenjem i savladavanjem ovih tehnologija unutar projektnog roka.
+            
+            \item \textbf{Performanse i optimizacija:} \textit{React}, iako moćan, može dovesti do problema sa performansama ako se ne koristi pravilno (npr. nepotrebno \textit{re-renderiranje} komponenti). Projekat mora uključivati fazu optimizacije performansi \textit{frontenda} (npr. \textit{code splitting, lazy loading, memoization}).
+            
+            \item \textbf{Ekosistem i biblioteke:} Ograničava izbor dodatnih biblioteka na one koje su kompatibilne sa \textit{React} ekosistemom. Iako je ekosistem bogat, ponekad specifične potrebe mogu zahtijevati traženje ili prilagođavanje rješenja.
+            
+            \item \textbf{Stanje aplikacije:} Upravljanje stanjem u kompleksnijim \textit{React} aplikacijama (npr. koristeći \textit{Context} API ili eksterne biblioteke poput \textit{Redux/Zustand}) može biti izazovno i zahtijeva pažljivo planiranje.
+        
+        \end{itemize}
+        
+    \item \textbf{\textit{Backend} (\textit{JavaScript}, \textit{Node.js}, \textit{Express.js}):}
+
+        \begin{itemize}
+            \item \textbf{Asinhrona priroda \textit{Node.js}-a:} Zahtijeva dobro razumijevanje asinhronog programiranja (\textit{callbacks, Promises, async/await}) kako bi se izbjegli problemi poput \textit{"callback hell-a"} i osigurala efikasnost.
+            
+            \item \textbf{Single-threaded} model: Iako \textit{Node.js} koristi \textit{event loop} za neblokirajuće I/O operacije, CPU-intenzivne operacije mogu blokirati \textit{event loop} i uticati na performanse. Projekat mora identifikovati i optimizovati takve operacije ili ih delegirati (npr. \textit{worker threads}, odvojeni servisi).
+            
+            \item \textbf{Upravljanje zavisnostima:} \textit{Node.js} projekti često imaju veliki broj zavisnosti (npm paketi). Potrebno je pažljivo upravljati ovim zavisnostima, pratiti njihovu sigurnost i ažuriranja.
+            
+            \item \textbf{Sigurnost:} \textit{Express.js} pruža osnovu, ali implementacija sigurnosnih mjera je odgovornost razvojnog tima.
+        \end{itemize}
+    
+    \item \textbf{Baza podataka (\textit{PostgreSQL}, \textit{Sequelize} ORM):}
+
+        \begin{itemize}
+            \item \textbf{Dizajn šeme baze podataka:} Zahtijeva pažljivo modeliranje podataka kako bi se osigurala konzistentnost, integritet i efikasnost upita.
+            
+            \item \textbf{ORM apstrakcija:} \textit{Sequelize} olakšava interakciju sa bazom, ali može sakriti kompleksnost SQL upita. Razvojni tim mora razumjeti kako ORM generiše upite kako bi se izbjegli problemi sa performansama. Ponekad je potrebno pisati sirove SQL upite za kompleksnije operacije.
+            
+            \item \textbf{Migracije baze podataka:} Promjene u šemi baze podataka moraju se upravljati kroz migracije kako bi se osigurala konzistentnost između razvojnih i produkcijskih okruženja.
+            
+            \item \textbf{Transakcije:} Kada imamo procese poput plaćanja i rezervacije karte, gdje je bitno da se cijeli niz radnji izvrši potpuno i ispravno ili da se uopće ne izvrši ako nešto krene po zlu, neophodna je pravilna upotreba transakcija.
+        \end{itemize}
+    
+    \item \textbf{Eksterni API servisi (\textit{Payment Gateways, Social Media}, FCM, \textit{Email, Analytics}):}
+    
+        \begin{itemize}
+            \item \textbf{Zavisnost od trećih strana:} Funkcionalnost sistema koja se oslanja na ove API-je direktno zavisi od njihove dostupnosti, pouzdanosti i eventualnih promjena u njihovim specifikacijama ili cjenovnim modelima.
+            
+            \item \textbf{Integracijski izazovi:} Povezivanje sa svakim API-jem zahtijeva razumijevanje njegove dokumentacije, implementaciju klijentskog koda, rukovanje autentifikacijom i greškama. Ovo može biti vremenski zahtjevno.
+            
+            \item \textbf{Ograničenja API-ja:} Svaki API ima svoja ograničenja (npr. \textit{rate limits}, dostupne funkcionalnosti). Projekat mora biti dizajniran tako da poštuje ova ograničenja i da adekvatno rukuje situacijama kada su ona dostignuta.
+            
+            \item \textbf{Sigurnost podataka:} Prilikom razmjene podataka sa eksternim servisima (posebno \textit{payment gateway}-ima), moraju se primijeniti stroge sigurnosne mjere za zaštitu osjetljivih informacija.
+        \end{itemize}
+    
+    \item \textbf{Arhitektura (Troslojna arhitektura):}
+
+        \begin{itemize}
+            \item \textbf{Struktura projekta:} Nameće jasnu podjelu koda na prezentacijski sloj (\textit{frontend}), poslovnu logiku (\textit{backend}) i sloj za pristup podacima. Ovo zahtijeva disciplinovan pristup organizaciji koda.
+            
+            \item \textbf{Komunikacija između slojeva:} Definisanje jasnih interfejsa (npr. REST API između \textit{frontenda} i \textit{backenda}) je ključno. Promjene u jednom sloju ne bi trebale direktno utjecati na druge ako su interfejsi stabilni.
+            
+            \item \textbf{Razvojni proces:} Omogućava paralelni razvoj različitih slojeva od strane različitih članova tima (ili podtimova), ali zahtijeva dobru koordinaciju.
+            
+            \item \textbf{Testiranje:} Olakšava testiranje pojedinačnih slojeva nezavisno (npr. \textit{unit} testovi za poslovnu logiku, UI testovi za \textit{frontend}).
+        \end{itemize}
+    
+\end{itemize}
 
 \sloppy
 \subsection{Organizacijska ograničenja}
 
-Opisati sva organizacijska ograničenja i na koji način utječu na projekat.
+
+
+Procjena rizika za organizacijska ograničenja (kategorije: NIZAK, SREDNJI, VISOK):
+
+\begin{itemize}
+    \item \textbf{Bliskost s poslovnom oblasti:}
+    
+    \begin{itemize}
+        \item \textbf{Procjena rizika:} SREDNJI. 
+        
+        \item Razvojni tim posjeduje opšte razumijevanje funkcionisanja pozorišta i sistema za prodaju karata, ali nema dubinsko ekspertsko znanje specifično za "Pozorište mladih" ili kompleksne interne procese. Potrebno je oslanjanje na analizu i povratne informacije od klijenta.
+    \end{itemize}
+    
+    \item \textbf{Bliskost s tehnologijama:}
+    
+    \begin{itemize}
+        \item \textbf{Procjena rizika:} NIZAK. 
+        
+        \item Iako su tehnologije odabrane na osnovu prethodnog iskustva većine članova tima i dostupnih resursa, nivo stručnosti unutar tima može varirati. Postoji rizik od sporijeg razvoja ili implementacije manje optimalnih rješenja zbog potrebe za učenjem i savladavanjem specifičnosti odabranih tehnologija.
+    \end{itemize}
+    
+    \item \textbf{Kompatibilnost s postojećim tehnologijama:}
+
+    \begin{itemize}
+        \item \textbf{Procjena rizika:} NIZAK. 
+        
+        \item Projekat podrazumijeva razvoj novog informacionog sistema, te ne postoji kompleksna migracija ili integracija sa naslijeđenim, nekompatibilnim sistemima "Pozorišta mladih".
+    \end{itemize}
+    
+    \item \textbf{Resursi koje projekat zahtijeva (vrijeme, broj članova tima):}
+
+    \begin{itemize}
+        \item \textbf{Procjena rizika:} SREDNJI do VISOK. 
+        \item Projektni rokovi su fiksni i definisani. Postoji rizik da obim definisanih funkcionalnosti premašuje kapacitete raspoloživog razvojnog tima za realizaciju unutar zadanog vremenskog okvira. Dodatni pritisak mogu stvarati i druge paralelne obaveze članova tima, što može uticati na raspoloživo vrijeme i fokus posvećen ovom projektu. Neadekvatna procjena vremena potrebnog za pojedine zadatke ili neočekivane tehničke poteškoće mogu dodatno ugroziti poštivanje rokova.
+    \end{itemize}
+\end{itemize}
+
 
 \sloppy
 \subsection{Operativna ograničenja}
 
-Opisati sva operativna ograničenja i na koji način utječu na projekat.
+Procjena rizika izvodljivosti ključnih funkcionalnih zahtjeva:
+
+\begin{itemize}
+    \item \textbf{Rizik da funkcionalnost online prodaje i rezervacije karata neće u potpunosti eliminisati potrebu za postojećim procesima ili ručnom intervencijom:}
+
+    \begin{itemize}
+        \item \textbf{Procjena rizika:} NIZAK.
+        
+        \item Iako je primarni cilj potpuna digitalizacija i automatizacija procesa prodaje i rezervacije karata, postoji mogućnost da sistem neće moći efikasno obraditi sve specifične i kompleksne scenarije bez povremene ručne intervencije osoblja pozorišta. Na primjer, zahtjevi za refundaciju pod posebnim okolnostima, rješavanje sporova oko plaćanja ili upravljanje veoma velikim grupnim rezervacijama sa specifičnim zahtjevima mogu se pokazati kao izazovni za potpunu automatizaciju. Ukoliko se ovi rubni slučajevi ne predvide i adekvatno ne pokriju funkcionalnostima novog sistema, može doći do situacije gdje se paralelno koriste novi digitalni sistem i postojeći (ili novi) manuelni procesi za rješavanje tih izuzetaka, što smanjuje ukupnu efikasnost i potencijalno stvara konfuziju.
+    \end{itemize}
+    
+    \item \textbf{Rizik da korisnici neće dobro prihvatiti funkcionalnost interaktivnog foruma ili personalizovanih notifikacija:}
+
+    \begin{itemize}
+        \item \textbf{Procjena rizika:} SREDNJI.
+        
+        \item Svaki novi sistem zahtijeva period prilagođavanja.
+        
+        \item \textbf{Za interaktivni forum:} Iako mladi kao ciljna grupa generalno dobro prihvataju online interakciju, postoji rizik da forum ne zaživi ako sadržaj nije dovoljno angažujući, ako moderacija nije adekvatna (što može dovesti do neprimjerenog sadržaja i odbijanja korisnika) ili ako korisnici ne vide jasnu vrijednost u ostavljanju recenzija i komentara. Pasivnost korisnika može učiniti forum neaktivnim.
+        
+        \item \textbf{Za personalizovane notifikacije:} Korisnici mogu doživjeti notifikacije (\textit{e-mail}, \textit{push}) kao nametljive ili irelevantne ako algoritam za preporuke nije dovoljno precizan ili ako učestalost notifikacija nije dobro podešena. To bi moglo dovesti do toga da korisnici isključe notifikacije, čime se gubi kanal za direktnu komunikaciju i promociju.
+    \end{itemize}
+    
+    \item \textbf{Rizik da korištenje inovativnih tehnologija, poput integracije sa TikTok/Instagram API-jima za dijeljenje sadržaja ili napredne analitike za administratore, neće donijeti očekivani angažman ili uvid, već će samo povećati kompleksnost sistema i vrijeme razvoja:}
+
+    \begin{itemize}
+        \item \textbf{Procjena rizika:} SREDNJI.
+
+        \item \textbf{Integracija sa društvenim mrežama:} Iako je dijeljenje sadržaja na TikTok-u i Instagram-u popularno, stvarni doseg i konverzija (npr. dijeljenje koje dovodi do kupovine karte) mogu biti manji od očekivanih ako sadržaj koji se generiše za dijeljenje nije dovoljno atraktivan ili ako korisnici preferiraju druge načine dijeljenja informacija. Također, česte promjene API-ja ovih platformi mogu zahtijevati stalna ažuriranja i održavanje integracije.
+
+        \item \textbf{Napredna analitika za administratore:} Prikupljanje i prikazivanje detaljnih analitičkih podataka je korisno, ali postoji rizik da administratori neće imati dovoljno vremena ili znanja da te podatke efikasno koriste za donošenje odluka. Implementacija kompleksnih analitičkih alata također značajno povećava vrijeme razvoja.
+    \end{itemize}
+\end{itemize}
 
 \sloppy
 \subsection{Zakonska ograničenja}
 
-Opisati sva zakonska ograničenja i na koji način utječu na projekat.
+Informacioni sistem "Pozorište mladih" mora biti usklađen sa relevantnim zakonskim propisima Bosne i Hercegovine i, gdje je primjenjivo, međunarodnim standardima. Ključna zakonska ograničenja za projekat uključuju:
+
+\begin{itemize}
+    \item \textbf{Zakon o zaštiti ličnih podataka Bosne i Hercegovine:}
+    
+        Sistem će prikupljati i obrađivati lične podatke korisnika. Stoga je imperativno osigurati da se cjelokupan životni ciklus podataka – od prikupljanja, preko obrade i čuvanja, do brisanja – odvija u strogoj saglasnosti sa odredbama ovog zakona. To podrazumijeva pribavljanje izričite saglasnosti korisnika, osiguravanje pune transparentnosti o svrsi i načinu obrade podataka, te implementaciju robusnih tehničkih i organizacionih mjera za zaštitu podataka od neovlaštenog pristupa, gubitka ili zloupotrebe. Agencija za zaštitu ličnih podataka u Bosni i Hercegovini je nadzorno tijelo za primjenu ovog zakona.
+        
+    \item \textbf{Zakon o unutrašnjoj trgovini Federacije Bosne i Hercegovine}
+    
+        Ovaj zakon direktno reguliše elektronsku trgovinu u Federaciji BiH, definišući je kao poseban oblik prodaje na daljinu. Za informacioni sistem "Pozorište mladih", koji će uključivati online prodaju karata, ključne su odredbe ovog zakona, posebno član 50. i 51. Sistem mora osigurati da "Pozorište mladih", kao trgovac, ispunjava sve propisane obaveze.
+        
+    \item \textbf{Zakon o autorskom pravu i srodnim pravima u Bosni i Hercegovini:}
+    
+        Sadržaj koji se prikazuje na platformi (opisi predstava, fotografije, video materijali, promotivni materijali) mora poštovati autorska prava. "Pozorište mladih" mora imati pravo korištenja svog materijala, a sistem ne smije omogućavati neovlašteno preuzimanje ili distribuciju zaštićenog sadržaja. Također, korisnički generisan sadržaj (npr. komentari na forumu) mora biti moderiran kako bi se spriječilo kršenje autorskih prava. Institut za intelektualno vlasništvo Bosne i Hercegovine je relevantna institucija za pitanja autorskih prava.
+\end{itemize}
+
+Pored navedenih, potrebno je pratiti i eventualne specifične propise koji se odnose na rad kulturnih institucija ili online prodaju ulaznica.

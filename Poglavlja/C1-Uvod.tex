@@ -131,7 +131,7 @@ Informacioni sistem koji se razvija za Pozorište mladih ima za cilj unapređenj
 
 \begin{itemize}
 \item \textbf{Upravljanje repertoarom} - Unos, ažuriranje i pregled predstava, uključujući rasporede i opis sadržaja.
-\item \textbf{\textit{Online} prodaja i rezervacija karata} - Mogućnost kupovine i rezervacije ulaznica putem web platforme.
+\item \textbf{\textit{Online} prodaja i rezervacija karata} - Mogućnost kupovine i rezervacije ulaznica putem \textit{web} platforme.
 \item \textbf{Korisnički profili i lojalnost programi} - Registracija korisnika, praćenje kupovina i dodjela pogodnosti.
 \item \textbf{Interaktivna komunikacija} - Forum za diskusije, ocjene i komentare posjetilaca.
 \item \textbf{Marketing i promocija} - Integracija sa društvenim mrežama i slanje promotivnih obavijesti.
@@ -178,20 +178,36 @@ Sistem je strukturisan u module i podmodule radi lakše organizacije i skalabiln
 Metodologije izrade koje se smatraju najpogodnijim za implementaciju informacionog sistema Pozorište mladih su navedene ispod.
 
 \begin{enumerate}
-    \item \textbf{Metodologija:} \textit{Waterfall} \\
-    \textbf{Elementi koji će se primijeniti:} Fazni razvoj, detaljna dokumentacija, sekvencijalni tok rada \\
+    \item \textbf{Metodologija:} \textit{Waterfall} 
+
+    
+    \textbf{Elementi koji će se primijeniti:} Fazni razvoj, detaljna dokumentacija, sekvencijalni tok rada 
+
+    
     \textbf{Razlozi:} Minimizira rizik od grešaka u funkcionalnostima koje ne bi smjele često mijenjati svoju strukturu ili način rada. Naročito je pogodna za module koji zahtijevaju stabilnost, preciznu dokumentaciju, konzistentnost i integritet podataka, minimalne promjene, te su u skladu sa propisima i standardima (ovakvi sistemi su upravo baze podataka, sistemi za finansijske transakcije i analitiku, tj. uključuju module Plaćanje i fakturisanje, Analitika i izvještavanje).
 
-    \item \textbf{Metodologija:} \textit{Feature-Driven Development (FDD)} \\
-    \textbf{Elementi koji će se primijeniti:} Razvoj zasnovan na funkcionalnostima, iterativna isporuka, modeliranje objekata domene\\
+    \item \textbf{Metodologija:} \textit{Feature-Driven Development (FDD)} 
+
+    
+    \textbf{Elementi koji će se primijeniti:} Razvoj zasnovan na funkcionalnostima, iterativna isporuka, modeliranje objekata domene
+
+    
     \textbf{Razlozi:} Lista funkcionalnosti je jasno definisana i neće se širiti, fokus je na postepenoj izradi pojedinačnih funkcionalnosti, odnosno modularni pristup. Omogućava se brža implementacija i testiranje funkcionalnosti, bez rizika od preklapanja ili odstupanja od specifikacija (moduli nad kojim se primjenjuje ova metodologija su \textit{Online} prodaja i rezervacija, Korisnički profili i lojalnost programi, Marketing i promocija).
 
-    \item \textbf{Metodologija:} SCRUM \\
-    \textbf{Elementi koji će se primijeniti:} Rad u sprintovima, dnevni sastanci, povratne informacije korisnika \\
-    \textbf{Razlozi:} Fleksibilnost u razvoju korisničkog interfejsa i interaktivnih elemenata, gdje su promjene česte i poželjne. Postizanje optimalnog korisničkog iskustva, a za isto je potrebno redovno testiranje i prilagođavanje implementacije i dizajna na osnovu povratnih informacija korisnika (primjenu nalazi u implementaciji Web interfejs-a i mobilne aplikacije, UX optimizaciji, prilagođavanju vizuelnog dizajna, te modulu Interaktivna komunikacija koji uključuje forum, ocjenjivanje, komentare).
+    \item \textbf{Metodologija:} SCRUM 
 
-    \item \textbf{Metodologija:} Kanban \\
-    \textbf{Elementi koji će se primijeniti:} Vizuelni prikaz toka rada, ograničenje broja aktivnih zadataka, kontinuirani razvoj i isporuka, \\
+    
+    \textbf{Elementi koji će se primijeniti:} Rad u sprintovima, dnevni sastanci, povratne informacije korisnika 
+
+    
+    \textbf{Razlozi:} Fleksibilnost u razvoju korisničkog interfejsa i interaktivnih elemenata, gdje su promjene česte i poželjne. Postizanje optimalnog korisničkog iskustva, a za isto je potrebno redovno testiranje i prilagođavanje implementacije i dizajna na osnovu povratnih informacija korisnika (primjenu nalazi u implementaciji \textit{Web} interfejs-a i mobilne aplikacije, UX optimizaciji, prilagođavanju vizuelnog dizajna, te modulu Interaktivna komunikacija koji uključuje forum, ocjenjivanje, komentare).
+
+    \item \textbf{Metodologija:} Kanban 
+
+    
+    \textbf{Elementi koji će se primijeniti:} Vizuelni prikaz toka rada, ograničenje broja aktivnih zadataka, kontinuirani razvoj i isporuka, 
+
+    
     \textbf{Razlozi:} Omogućava kontinuirano održavanje sistema i brzo rješavanje tehničkih problema. Pomaže u organizaciji zadataka vodeći računa o prioritetima, i tako doprinosi efikasnosti tima. Smanjuje vrijeme potrebno za ispravljanje grešaka i implementaciju manjih poboljšanja i tako doprinosi stabilnosti sistema (pogodno za ažuriranje repertoara, tehničku podršku, optimizaciju sistema i sigurnost).
 \end{enumerate}
 Dakle, kombinacija metodologija \textit{Waterfall}, \textit{Feature-Driven Development}, SCRUM i Kanban omogućava optimalan razvoj informacionog sistema za Pozorište mladih. Ovakav pristup kombinuje strukturu i stabilnost sa agilnosti i efikasnosti, te tako osigurava visokokvalitetan razvoj i dugoročnu održivost ovog sistema.
@@ -199,6 +215,7 @@ Dakle, kombinacija metodologija \textit{Waterfall}, \textit{Feature-Driven Devel
 \sloppy
 
 \section{Plan izvedbe}
+\label{izvedba}
 Na slici \ref{fig:pi1} je prikaz gantograma koji vrši predikciju i raspodjelu zadataka vezanih za dokumentaciju projekta informacionog sistema. U koloni sa lijeve strane su navedene predviđene aktivnosti, kao i zadaci koje ona zahtijevaju, dok je sa desne strane vizuelni prikaz istih i predviđeno vrijeme potrebno za njihovo izvršenje.
 
 \begin{figure}[H]
@@ -229,39 +246,70 @@ Prikazano na slici \ref{fig:pi3} je "PERT" dijagram izvedbe projekta u skladu sa
     \centering
     \includegraphics[width=0.8\textwidth]{Slike/PERT.png}
     \caption{Prikaz PERT dijagrama za izvedbu projekta od projektovanja do implementacije slijedeći agilne metodologije za implementaciju i waterfall za samo projektovanje.}
-    \label{fig:pi3} % ko je majketi davao ove labele i zasto
+    \label{fig:pi3} 
 \end{figure}
 \newpage
 \sloppy
+\label{anaproc}
 \section{Analiza i procjena rizika}
 
 \begin{enumerate}
-    \item \textbf{Faza rada:} Prikupljanje korisničkih zahtjeva \\
-    \textbf{Opis rizika:} U ovoj fazi postoji vremenski rizik. Ukoliko dođe do nerazumijevanja između klijenta i osoba koje prikupljaju korisničke zahtjeve, bit će potrebno odvojiti više vremena da se korisnički zahtjevi uspješno prikupe. \\
-    \textbf{Vjerovatnoća pojave:} Srednja
+    \item \textbf{Faza rada:} Prikupljanje korisničkih zahtjeva 
 
-    \item \textbf{Faza rada:} Poslovni procesi \\
-    \textbf{Opis rizika:} U ovoj fazi postoji operativni rizik, ukoliko dođe do nerazumijevanja i manjka saradnje između osoba koje prikupljaju korisničke zahtjeve i osoba koje definišu poslovne procese. \\
-    \textbf{Vjerovatnoća pojave:} Mala
-
-    \item \textbf{Faza rada:} Dizajn korisničkih interfejsa \\
-    \textbf{Opis rizika:} U ovoj fazi postoji finansijski rizik, jer nisu predviđena sredstva za specijalne alate za dizajniranje prototipa korisničkih interfejsa. \\
-    \textbf{Vjerovatnoća pojave:} Mala
-
-    \item \textbf{Faza rada:} Dizajn korisničkih interfejsa \\
-    \textbf{Opis rizika:} U ovoj fazi postoji operativni rizik, zbog manjka ljudi stručnih u dizajniranju korisničkih interfejsa i njihove nepravilne raspodjele. \\
-    \textbf{Vjerovatnoća pojave:} Srednja
-
-    \item \textbf{Faza rada:} Arhitektura informacionog sistema \\
-    \textbf{Opis rizika:} U ovoj fazi postoji tehnički rizik, zbog visoke kompleksnosti planiranja. \\
-    \textbf{Vjerovatnoća pojave:} Srednja
-
-    \item \textbf{Faza rada:} Prijedlog tehnologija za implementaciju \\
-    \textbf{Opis rizika:} U ovoj fazi postoji vremenski rizik, jer je moguće da će biti potrebno više vremena za analizu tehnologija nego što je planirano. \\
-    \textbf{Vjerovatnoća pojave:} Mala
     
-    \item \textbf{Faza rada:} Ograničenja \\
-    \textbf{Opis rizika:} U ovoj fazi postoji programski rizik, jer se može desiti da se nakon završetka faze pojave nova ograničenja. \\
+    \textbf{Opis rizika:} U ovoj fazi postoji vremenski rizik. Ukoliko dođe do nerazumijevanja između klijenta i osoba koje prikupljaju korisničke zahtjeve, bit će potrebno odvojiti više vremena da se korisnički zahtjevi uspješno prikupe. 
+
+    
+    \textbf{Vjerovatnoća pojave:} Srednja
+
+    \item \textbf{Faza rada:} Poslovni procesi 
+
+    
+    \textbf{Opis rizika:} U ovoj fazi postoji operativni rizik, ukoliko dođe do nerazumijevanja i manjka saradnje između osoba koje prikupljaju korisničke zahtjeve i osoba koje definišu poslovne procese. 
+
+    
+    \textbf{Vjerovatnoća pojave:} Mala
+
+    \item \textbf{Faza rada:} Dizajn korisničkih interfejsa 
+
+    
+    \textbf{Opis rizika:} U ovoj fazi postoji finansijski rizik, jer nisu predviđena sredstva za specijalne alate za dizajniranje prototipa korisničkih interfejsa. 
+
+    
+    \textbf{Vjerovatnoća pojave:} Mala
+
+    \item \textbf{Faza rada:} Dizajn korisničkih interfejsa 
+
+    
+    \textbf{Opis rizika:} U ovoj fazi postoji operativni rizik, zbog manjka ljudi stručnih u dizajniranju korisničkih interfejsa i njihove nepravilne raspodjele. 
+
+    
+    \textbf{Vjerovatnoća pojave:} Srednja
+
+    \item \textbf{Faza rada:} Arhitektura informacionog sistema 
+
+    
+    \textbf{Opis rizika:} U ovoj fazi postoji tehnički rizik, zbog visoke kompleksnosti planiranja. 
+
+    
+    \textbf{Vjerovatnoća pojave:} Srednja
+
+    \item \textbf{Faza rada:} Prijedlog tehnologija za implementaciju 
+
+    
+    \textbf{Opis rizika:} U ovoj fazi postoji vremenski rizik, jer je moguće da će biti potrebno više vremena za analizu tehnologija nego što je planirano. 
+
+    
+    \textbf{Vjerovatnoća pojave:} Mala
+
+    \newpage
+    
+    \item \textbf{Faza rada:} Ograničenja 
+
+    
+    \textbf{Opis rizika:} U ovoj fazi postoji programski rizik, jer se može desiti da se nakon završetka faze pojave nova ograničenja. 
+
+    
     \textbf{Vjerovatnoća pojave:} Mala
 \end{enumerate}
 
